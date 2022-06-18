@@ -4,7 +4,7 @@ pipeline {
         stage('clone repo') {
             steps {
                 echo 'cloning repo'
-                git branch: 'main', url: 'https://github.com/mukeshktc/case-study.git'
+                git branch: 'develop', url: 'https://github.com/mukeshktc/case-study.git'
             }
         }
         stage('build docker') {
@@ -14,10 +14,6 @@ pipeline {
             }
             
         }
-        stage('test & publish') {
-            steps {
-                sh 'sudo docker run -it -d -p 82:80 mukeshktc/ubuntu_apache:4.0'
-            }
-        }
+        
     }
 }
