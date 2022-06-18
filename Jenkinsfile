@@ -4,6 +4,7 @@ pipeline {
         stage('clone repo') {
             steps {
                 echo 'cloning repo'
+                git branch: 'main', url: 'https://github.com/mukeshktc/case-study.git'
             }
         }
         stage('build docker') {
